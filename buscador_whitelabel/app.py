@@ -1,3 +1,6 @@
+
+Copiar
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -15,12 +18,8 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
-/* Reset & Base */
-html, body, [class*="css"] {
-    font-family: 'DM Sans', sans-serif;
-}
+html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
 
-/* Background */
 .stApp {
     background: #0a0a0f;
     background-image:
@@ -28,85 +27,43 @@ html, body, [class*="css"] {
         radial-gradient(ellipse 40% 30% at 80% 80%, rgba(236,72,153,0.10) 0%, transparent 50%);
 }
 
-/* Hide Streamlit default elements */
 #MainMenu, footer, header { visibility: hidden; }
 .block-container { padding: 2rem 3rem 4rem; max-width: 1400px; }
 
-/* ── Hero Header ── */
-.hero-header {
-    text-align: center;
-    padding: 3.5rem 0 2rem;
-    position: relative;
-}
+.hero-header { text-align: center; padding: 3.5rem 0 2rem; }
 .hero-tag {
     display: inline-block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #818cf8;
-    background: rgba(99,102,241,0.12);
-    border: 1px solid rgba(99,102,241,0.25);
-    padding: 0.35rem 1rem;
-    border-radius: 100px;
-    margin-bottom: 1.2rem;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
+    color: #818cf8; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25);
+    padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.2rem;
 }
 .hero-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    color: #f8fafc;
-    margin: 0 0 0.75rem;
+    font-family: 'Syne', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800;
+    line-height: 1.1; letter-spacing: -0.03em; color: #f8fafc; margin: 0 0 0.75rem;
 }
 .hero-title span {
     background: linear-gradient(135deg, #818cf8 0%, #ec4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.hero-sub {
-    font-size: 1.05rem;
-    color: #94a3b8;
-    font-weight: 300;
-    letter-spacing: 0.01em;
-}
+.hero-sub { font-size: 1.05rem; color: #94a3b8; font-weight: 300; }
 
-/* ── Search Area ── */
 .search-container {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 2rem 2.5rem;
-    margin: 1.5rem 0 2rem;
-    backdrop-filter: blur(12px);
-    position: relative;
-    overflow: hidden;
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 2rem 2.5rem; margin: 1.5rem 0 2rem;
+    backdrop-filter: blur(12px); position: relative; overflow: hidden;
 }
 .search-container::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    padding: 1px;
+    content: ''; position: absolute; inset: 0; border-radius: 20px; padding: 1px;
     background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(236,72,153,0.15), transparent);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    pointer-events: none;
+    -webkit-mask-composite: destination-out; pointer-events: none;
 }
 
-/* Streamlit input overrides */
 .stTextInput > div > div > input {
-    background: rgba(255,255,255,0.05) !important;
-    border: 1px solid rgba(255,255,255,0.12) !important;
-    border-radius: 12px !important;
-    color: #f1f5f9 !important;
-    font-family: 'DM Sans', sans-serif !important;
-    font-size: 1rem !important;
-    padding: 0.75rem 1.1rem !important;
-    transition: all 0.2s ease !important;
+    background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 12px !important; color: #f1f5f9 !important;
+    font-family: 'DM Sans', sans-serif !important; font-size: 1rem !important;
+    padding: 0.75rem 1.1rem !important; transition: all 0.2s ease !important;
 }
 .stTextInput > div > div > input:focus {
     border-color: rgba(99,102,241,0.6) !important;
@@ -115,29 +72,17 @@ html, body, [class*="css"] {
 }
 .stTextInput > div > div > input::placeholder { color: #475569 !important; }
 .stTextInput label {
-    color: #94a3b8 !important;
-    font-size: 0.8rem !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase !important;
+    color: #94a3b8 !important; font-size: 0.8rem !important; font-weight: 500 !important;
+    letter-spacing: 0.08em !important; text-transform: uppercase !important;
     font-family: 'DM Sans', sans-serif !important;
 }
 
-/* ── Button ── */
 .stButton > button {
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
-    color: white !important;
-    font-family: 'Syne', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    letter-spacing: 0.04em !important;
-    border: none !important;
-    border-radius: 12px !important;
-    padding: 0.75rem 2.5rem !important;
-    width: 100% !important;
+    color: white !important; font-family: 'Syne', sans-serif !important; font-weight: 700 !important;
+    font-size: 0.95rem !important; letter-spacing: 0.04em !important; border: none !important;
+    border-radius: 12px !important; padding: 0.75rem 2.5rem !important; width: 100% !important;
     transition: all 0.25s cubic-bezier(0.4,0,0.2,1) !important;
-    position: relative !important;
-    overflow: hidden !important;
     box-shadow: 0 4px 20px rgba(99,102,241,0.35) !important;
 }
 .stButton > button:hover {
@@ -146,198 +91,109 @@ html, body, [class*="css"] {
     background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%) !important;
 }
 .stButton > button:active { transform: translateY(0) !important; }
+.stCaption { color: #64748b !important; font-size: 0.78rem !important; }
 
-/* ── Caption / location badge ── */
-.stCaption {
-    color: #64748b !important;
-    font-size: 0.78rem !important;
-}
-
-/* ── Section heading ── */
 .section-heading {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #f1f5f9;
-    letter-spacing: -0.02em;
-    margin: 2rem 0 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700;
+    color: #f1f5f9; letter-spacing: -0.02em; margin: 2rem 0 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
 }
 .section-heading::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(99,102,241,0.4), transparent);
-    margin-left: 0.75rem;
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, rgba(99,102,241,0.4), transparent); margin-left: 0.75rem;
 }
 
-/* ── Results Count Badge ── */
 .results-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: #818cf8;
-    background: rgba(99,102,241,0.1);
-    border: 1px solid rgba(99,102,241,0.2);
-    padding: 0.3rem 0.85rem;
-    border-radius: 100px;
-    letter-spacing: 0.04em;
-    margin-bottom: 1rem;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; font-weight: 500; color: #818cf8;
+    background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2);
+    padding: 0.3rem 0.85rem; border-radius: 100px; letter-spacing: 0.04em; margin-bottom: 1rem;
 }
 
-/* ── Product Table ── */
 .product-table-wrapper {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 2rem;
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px; overflow: hidden; margin-bottom: 2rem;
 }
-.product-table-wrapper table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'DM Sans', sans-serif;
-}
+.product-table-wrapper table { width: 100%; border-collapse: collapse; font-family: 'DM Sans', sans-serif; }
 .product-table-wrapper thead tr {
-    background: rgba(99,102,241,0.1);
-    border-bottom: 1px solid rgba(99,102,241,0.2);
+    background: rgba(99,102,241,0.1); border-bottom: 1px solid rgba(99,102,241,0.2);
 }
 .product-table-wrapper thead th {
-    padding: 0.9rem 1.2rem;
-    text-align: left;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #818cf8;
+    padding: 0.9rem 1.2rem; text-align: left; font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; color: #818cf8;
 }
+.product-table-wrapper thead th:first-child { width: 68px; text-align: center; }
 .product-table-wrapper tbody tr {
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    transition: background 0.15s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.15s ease;
 }
 .product-table-wrapper tbody tr:hover { background: rgba(255,255,255,0.04); }
 .product-table-wrapper tbody tr:last-child { border-bottom: none; }
 .product-table-wrapper tbody td {
-    padding: 0.9rem 1.2rem;
-    font-size: 0.88rem;
-    color: #cbd5e1;
-    vertical-align: middle;
+    padding: 0.75rem 1.2rem; font-size: 0.88rem; color: #cbd5e1; vertical-align: middle;
 }
-.product-table-wrapper tbody td:first-child {
-    color: #f1f5f9;
-    font-weight: 400;
-    max-width: 340px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.product-table-wrapper tbody td:nth-child(2) {
+    color: #f1f5f9; max-width: 320px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-/* ── Stat Cards ── */
+.thumb-cell { text-align: center; }
+.thumb-img {
+    width: 54px; height: 54px; object-fit: contain; border-radius: 10px;
+    background: rgba(255,255,255,0.07); padding: 5px;
+    border: 1px solid rgba(255,255,255,0.1); display: block; margin: 0 auto;
+    transition: transform 0.2s ease;
+}
+.thumb-img:hover { transform: scale(1.12); }
+.thumb-placeholder {
+    width: 54px; height: 54px; border-radius: 10px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.3rem;
+}
+
 .stat-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 1.5rem 1.75rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 1.5rem 1.75rem; text-align: center; position: relative;
+    overflow: hidden; transition: transform 0.2s ease, border-color 0.2s ease;
 }
-.stat-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(99,102,241,0.3);
-}
-.stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-}
+.stat-card:hover { transform: translateY(-3px); border-color: rgba(99,102,241,0.3); }
+.stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
 .stat-card.min::before { background: linear-gradient(90deg, #10b981, #34d399); }
 .stat-card.avg::before { background: linear-gradient(90deg, #6366f1, #818cf8); }
 .stat-card.max::before { background: linear-gradient(90deg, #ec4899, #f43f5e); }
 .stat-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #64748b;
-    font-family: 'DM Sans', sans-serif;
-    margin-bottom: 0.5rem;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #64748b; font-family: 'DM Sans', sans-serif; margin-bottom: 0.5rem;
 }
 .stat-value {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.65rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1;
+    font-family: 'Syne', sans-serif; font-size: 1.65rem; font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1;
 }
 .stat-card.min .stat-value { color: #34d399; }
 .stat-card.avg .stat-value { color: #818cf8; }
 .stat-card.max .stat-value { color: #f472b6; }
 
-/* ── Spinner / spinner text ── */
 .stSpinner > div { border-top-color: #6366f1 !important; }
-
-/* ── Warning / Error ── */
-.stWarning, .stAlert {
-    background: rgba(245,158,11,0.08) !important;
-    border: 1px solid rgba(245,158,11,0.25) !important;
-    border-radius: 10px !important;
-    color: #fbbf24 !important;
-}
-.stError {
-    background: rgba(239,68,68,0.08) !important;
-    border: 1px solid rgba(239,68,68,0.25) !important;
-    border-radius: 10px !important;
-    color: #f87171 !important;
-}
-
-/* ── Plotly Chart override ── */
 .js-plotly-plot .plotly, .plot-container { background: transparent !important; }
-
-/* ── Divider ── */
 hr { border-color: rgba(255,255,255,0.07) !important; }
 
-/* ── Link styling ── */
 a.offer-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3em;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #818cf8;
-    background: rgba(99,102,241,0.1);
-    border: 1px solid rgba(99,102,241,0.2);
-    padding: 0.25rem 0.7rem;
-    border-radius: 6px;
-    text-decoration: none;
-    letter-spacing: 0.03em;
-    transition: background 0.15s, border-color 0.15s;
-    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 0.3em;
+    font-size: 0.8rem; font-weight: 500; color: #818cf8;
+    background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2);
+    padding: 0.25rem 0.7rem; border-radius: 6px; text-decoration: none;
+    letter-spacing: 0.03em; transition: background 0.15s, border-color 0.15s; white-space: nowrap;
 }
-a.offer-link:hover {
-    background: rgba(99,102,241,0.2);
-    border-color: rgba(99,102,241,0.4);
-    color: #a5b4fc;
-}
+a.offer-link:hover { background: rgba(99,102,241,0.2); border-color: rgba(99,102,241,0.4); color: #a5b4fc; }
 
-/* ── Store badge ── */
 .store-badge {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: #94a3b8;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 0.2rem 0.6rem;
-    border-radius: 6px;
-    letter-spacing: 0.02em;
+    display: inline-block; font-size: 0.78rem; font-weight: 500; color: #94a3b8;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.2rem 0.6rem; border-radius: 6px; letter-spacing: 0.02em;
+}
+.currency-note {
+    display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem;
+    color: #475569; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+    padding: 0.2rem 0.65rem; border-radius: 6px; margin-left: 0.5rem; font-family: 'DM Sans', sans-serif;
+    font-weight: 400; letter-spacing: 0;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -410,9 +266,11 @@ else:
                     df = pd.DataFrame([
                         {
                             "Título": p.get("title"),
-                            "Preço": parse_price(p.get("price", 0)),
+                            # Usa extracted_price (já float) se disponível, senão faz parse do price string
+                            "Preço": float(p["extracted_price"]) if p.get("extracted_price") is not None else parse_price(p.get("price", 0)),
                             "Loja": p.get("source"),
                             "Link": p.get("link"),
+                            "Thumbnail": p.get("thumbnail", ""),
                         }
                         for p in produtos if p.get("price")
                     ])
@@ -435,18 +293,33 @@ else:
                         return f'<span class="store-badge">{loja}</span>'
                     df["Loja_fmt"] = df["Loja"].apply(loja_badge)
 
+                    # Thumbnail HTML — nova coluna adicionada
+                    def make_thumb(url):
+                        if url:
+                            return (
+                                f'<div class="thumb-cell">'
+                                f'<img src="{url}" class="thumb-img" loading="lazy" '
+                                f'onerror="this.parentElement.innerHTML=\'<div class=\\"thumb-placeholder\\">📦</div>\'">'
+                                f'</div>'
+                            )
+                        return '<div class="thumb-cell"><div class="thumb-placeholder">📦</div></div>'
+                    df["Foto"] = df["Thumbnail"].apply(make_thumb)
+
                     # ── Results heading
                     st.markdown(f"""
-                    <div class="section-heading">🛒 Resultados encontrados</div>
+                    <div class="section-heading">
+                        🛒 Resultados encontrados
+                        <span class="currency-note">💡 Preços em R$ — busca localizada para BR</span>
+                    </div>
                     <div class="results-badge">✦ {len(df)} produtos encontrados para "{q}"</div>
                     """, unsafe_allow_html=True)
 
-                    # ── Table
+                    # ── Table with thumbnail
                     table_html = df.to_html(
-                        columns=["Título", "Preço_fmt", "Loja_fmt", "Oferta"],
+                        columns=["Foto", "Título", "Preço_fmt", "Loja_fmt", "Oferta"],
                         escape=False,
                         index=False,
-                        header=["Produto", "Preço", "Loja", "Oferta"]
+                        header=["", "Produto", "Preço", "Loja", "Oferta"]
                     )
                     st.write(
                         f'<div class="product-table-wrapper">{table_html}</div>',
