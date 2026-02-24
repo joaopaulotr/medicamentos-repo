@@ -15,7 +15,7 @@ st.markdown("Pesquise produtos e veja estatísticas de preços!")
 
 # Parâmetros do usuário
 q = st.text_input("O que você quer buscar?", value="notebook")
-location = st.text_input("Localização (opcional)", value="Brasil")
+location = st.text_input("Localização (opcional)", value="Brazil")
 api_key = os.environ.get("SERP_APIKEY")
 
 if not api_key:
@@ -26,9 +26,10 @@ else:
 			params = {
 				"engine": "google_shopping",
 				"q": q,
-				"location": location,
 				"api_key": api_key
 			}
+			if location.strip():
+				params["location"] = location.strip()
 			resp = requests.get("https://serpapi.com/search.json", params=params)
 			if resp.status_code == 200:
 				data = resp.json()
@@ -37,10 +38,21 @@ else:
 					st.warning("Nenhum resultado encontrado.")
 				else:
 					# Estruturação dos dados
+					def parse_price(price):
+						if isinstance(price, (int, float)):
+							return float(price)
+						if isinstance(price, str):
+							price = price.replace("R$", "").replace("$", "").replace(",", ".").strip()
+							try:
+								return float(price)
+							except Exception:
+								return None
+						return None
+
 					df = pd.DataFrame([
 						{
 							"Título": p.get("title"),
-							"Preço": float(p.get("price", 0)),
+							"Preço": parse_price(p.get("price", 0)),
 							"Loja": p.get("source"),
 							"Link": p.get("link"),
 						}
