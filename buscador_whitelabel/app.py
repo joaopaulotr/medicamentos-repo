@@ -1,7 +1,9 @@
+
 import streamlit as st
 import requests
 import pandas as pd
 import plotly.express as px
+import os
 
 # Configuração da página
 st.set_page_config(page_title="Buscador Google Shopping", layout="wide")
@@ -12,12 +14,12 @@ st.markdown("Pesquise produtos e veja estatísticas de preços!")
 # Parâmetros do usuário
 q = st.text_input("O que você quer buscar?", value="notebook")
 location = st.text_input("Localização (opcional)", value="Brasil")
-api_key = st.text_input("SerpApi API Key", type="password")
+api_key = os.environ.get("SERP_APIKEY")
 
-if st.button("Buscar"):
-	if not api_key:
-		st.warning("Informe sua SerpApi API Key!")
-	else:
+if not api_key:
+	st.warning("A variável de ambiente SERP_APIKEY não está definida.")
+else:
+	if st.button("Buscar"):
 		with st.spinner("Buscando resultados..."):
 			params = {
 				"engine": "google_shopping",
