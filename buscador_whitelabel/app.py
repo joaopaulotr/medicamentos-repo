@@ -238,14 +238,15 @@ a.product-link:hover { background: rgba(16,185,129,0.18); color: #a7f3d0; }
 """, unsafe_allow_html=True)
 
 # ── Navbar with logo ──────────────────────────────────────────────────────────
-st.markdown(f"""
-<div class="navbar">
-    <div class="navbar-logo">
-        <img src="Logo2025_branco 2.png" alt="Pesquise Mais Logo">
+col_logo, col_tag = st.columns([1, 4])
+with col_logo:
+    st.image("buscador_whitelabel/Logo2025_branco 2.png", width=160)
+with col_tag:
+    st.markdown("""
+    <div class="navbar-tag" style="margin-top:14px;display:inline-block;">
+        ⚡ Powered by Pesquise Mais · Google Shopping
     </div>
-    <div class="navbar-tag">⚡ Powered by Pesquise Mais · Google Shopping</div>
-</div>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 # ── Hero ──────────────────────────────────────────────────────────────────────
 st.markdown("""
