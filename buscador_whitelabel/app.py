@@ -241,7 +241,7 @@ a.product-link:hover { background: rgba(16,185,129,0.18); color: #a7f3d0; }
 st.markdown(f"""
 <div class="navbar">
     <div class="navbar-logo">
-        <img src="data:image/png;base64,{LOGO_B64}" alt="Pesquise Mais Logo">
+        <img src="buscador_whitelabel\Logo2025_branco 2.png" alt="Pesquise Mais Logo">
     </div>
     <div class="navbar-tag">⚡ Powered by Pesquise Mais · Google Shopping</div>
 </div>
